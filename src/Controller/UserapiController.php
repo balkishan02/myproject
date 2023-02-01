@@ -65,6 +65,7 @@ class UserapiController extends AppController
         $userapi = $this->Userapi->newEmptyEntity();
         if ($this->request->is('post')) {
             $userapi = $this->Userapi->patchEntity($userapi, $this->request->getData());
+//            echo "<pre>";print_r($this->request->getData());die();
             if ($this->Userapi->save($userapi)) {
                 $this->Flash->success(__('The userapi has been saved.'));
 

@@ -13,6 +13,7 @@
                 <tr>
                     <th><?= $this->Paginator->sort('id') ?></th>
                     <th><?= $this->Paginator->sort('username') ?></th>
+<!--                    <th>--><?php //= $this->Paginator->sort('passwor') ?><!--</th>-->
                     <th><?= $this->Paginator->sort('role') ?></th>
                     <th class="actions"><?= __('Actions') ?></th>
                 </tr>
@@ -22,6 +23,7 @@
                 <tr>
                     <td><?= $this->Number->format($userapi->id) ?></td>
                     <td><?= h($userapi->username) ?></td>
+<!--                    <td>--><?php //= h($userapi->password) ?><!--</td>-->
                     <td><?= h($userapi->role) ?></td>
                     <td class="actions">
                         <?= $this->Html->link(__('View'), ['action' => 'view', $userapi->id]) ?>
