@@ -51,6 +51,23 @@ return static function (RouteBuilder $routes) {
 //        $routes->resources('Userapi');
 //    });
 
+
+    $routes->scope('/', function (RouteBuilder $builder) {
+
+        // Student Routes
+        $builder->connect('/add-student', ['controller' => 'Students', 'action' => 'addStudent']);
+        $builder->connect('/edit-student/:id', ['controller' => 'Students', 'action' => 'editStudent'], ["pass" => ["id"]]);
+        $builder->connect('/list-students', ['controller' => 'Students', 'action' => 'listStudents']);
+
+        // Ajax Routes
+        $builder->connect('/ajax-add-student', ['controller' => 'Ajax', 'action' => 'ajaxAddStudent']);
+        $builder->connect('/ajax-edit-student', ['controller' => 'Ajax', 'action' => 'ajaxEditStudent']);
+        $builder->connect('/ajax-delete-student', ['controller' => 'Ajax', 'action' => 'ajaxDeleteStudent']);
+
+    });
+
+
+
     Router::prefix('api',function($routes){
 
         $routes->setExtensions(['json', 'xml']);

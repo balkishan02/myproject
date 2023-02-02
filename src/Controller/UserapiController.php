@@ -3,6 +3,8 @@ declare(strict_types=1);
 
 namespace App\Controller;
 
+use http\Encoding\Stream\Enbrotli;
+
 /**
  * Userapi Controller
  *
@@ -74,11 +76,11 @@ class UserapiController extends AppController
             $this->Flash->error(__('The userapi could not be saved. Please, try again.'));
         }
         $this->set(compact('userapi'));
-        $this->set([
-            'message' => 'Api Run Successfully',
-            'User-data' => $userapi,
-            '_serialize' => ['User-data', 'message']
-        ]);
+//        $this->set([
+//            'message' => 'Api Run Successfully',
+//            'User-data' => $userapi,
+//            '_serialize' => ['User-data', 'message']
+//        ]);
 //        $this->set('_serialize', ['userapi']);
 //        $this->viewBuilder()->setOption('serialize',["userapi"]);
     }
@@ -126,4 +128,10 @@ class UserapiController extends AppController
 
         return $this->redirect(['action' => 'index']);
     }
+//    public function receive(){
+//        $id = $this->request->getData('id');
+//        exit($id);
+//    }
+
+
 }

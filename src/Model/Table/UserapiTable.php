@@ -53,12 +53,15 @@ class UserapiTable extends Table
         $validator
             ->scalar('username')
             ->maxLength('username', 60)
-            ->allowEmptyString('username');
+//            ->allowEmptyString('username');
+        ->notEmptyString('username');
+
 
         $validator
             ->scalar('password')
             ->maxLength('password', 60)
-            ->allowEmptyString('password');
+//            ->allowEmptyString('password');
+        ->notEmptyString('password');
 
         $validator
             ->scalar('role')
